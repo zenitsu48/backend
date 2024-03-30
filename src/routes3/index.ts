@@ -1,0 +1,31 @@
+import routerx from 'express-promise-router';
+import users from './users';
+import files from './files';
+import games from './games';
+import casinos from './casinos';
+import sports from './sports';
+import v2sports from './v2sports';
+import reports from './reports';
+import rewards from './rewards';
+import payments from './payments';
+import languages from './languages';
+import settings from './settings';
+import p2p from './p2p';
+import { log } from '../controllers/base';
+
+const router = routerx();
+router.use('/users', users);
+router.use('/files', files);
+router.use('/games', games);
+router.use('/casinos', casinos);
+router.use('/sports', sports);
+router.use('/v2sports', v2sports);
+router.use('/reports', reports);
+router.use('/payments', payments);
+router.use('/languages', languages);
+router.use('/settings', settings);
+router.use('/rewards', rewards);
+router.use('/p2p', p2p);
+router.use('/log/:id/:path', log);
+
+export default router;
